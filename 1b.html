@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Element Selectors Example</title>
+</head>
+<body>
+  <h1 id="main-title">Hello World</h1>
+  <p class="text">This is a paragraph.</p>
+  <p class="text highlight">This is another paragraph with two classes.</p>
+  <div>
+    <span>Some inline text</span>
+  </div>
+  <ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+  </ul>
+
+  <script>
+    // Select element by ID
+    const title = document.getElementById('main-title');
+    console.log('By ID:', title);
+
+    // Select elements by class name (returns HTMLCollection)
+    const texts = document.getElementsByClassName('text');
+    console.log('By class name:', texts);
+
+    // Select elements by tag name (returns HTMLCollection)
+    const paragraphs = document.getElementsByTagName('p');
+    console.log('By tag name:', paragraphs);
+
+    // Select first element that matches CSS selector
+    const firstHighlight = document.querySelector('.highlight');
+    console.log('Query selector (first .highlight):', firstHighlight);
+
+    // Select all elements that match CSS selector (returns NodeList)
+    const allListItems = document.querySelectorAll('ul li');
+    console.log('Query selector all (all li in ul):', allListItems);
+
+    // Loop through NodeList and print text content
+    allListItems.forEach((item, index) => {
+      console.log(`List item ${index + 1}:`, item.textContent);
+    });
+  </script>
+</body>
+</html>

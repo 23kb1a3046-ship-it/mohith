@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Listeners Demo</title>
+  <style>
+    #hoverBox {
+      width: 200px;
+      height: 100px;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 20px;
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Try These Events!</h2>
+
+  <button id="clickBtn">Click Me</button>
+  <div id="hoverBox">Hover Over Me</div>
+  <input type="text" id="textInput" placeholder="Type something..." />
+
+  <script>
+    // 🔘 Click Event
+    document.getElementById("clickBtn").addEventListener("click", () => {
+      alert("Button clicked!");
+    });
+
+    // 🖱️ Mouseover Event
+    const hoverBox = document.getElementById("hoverBox");
+    hoverBox.addEventListener("mouseover", () => {
+      hoverBox.style.backgroundColor = "#add8e6";
+      hoverBox.textContent = "You're hovering!";
+    });
+
+    // 🖱️ Mouseout Event
+    hoverBox.addEventListener("mouseout", () => {
+      hoverBox.style.backgroundColor = "#f0f0f0";
+      hoverBox.textContent = "Hover Over Me";
+    });
+
+    // ⌨️ Keyup Event
+    document.getElementById("textInput").addEventListener("keyup", (event) => {
+      console.log("You typed:", event.target.value);
+    });
+  </script>
+
+</body>
+</html>

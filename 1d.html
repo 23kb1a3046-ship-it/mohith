@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Click Events</title>
+</head>
+<body>
+
+  <h2>Click a Button</h2>
+
+  <button id="btnAlert">Show Alert</button>
+  <button id="btnChangeText">Change Text</button>
+  <button id="btnLog">Log to Console</button>
+
+  <p id="message">This is a message.</p>
+
+  <script>
+    // 🔔 Handle alert button click
+    document.getElementById("btnAlert").addEventListener("click", function() {
+      alert("You clicked the alert button!");
+    });
+
+    // ✏️ Handle text change button click
+    document.getElementById("btnChangeText").addEventListener("click", function() {
+      document.getElementById("message").textContent = "Text has been changed!";
+    });
+
+    // 🖨️ Handle console log button click
+    document.getElementById("btnLog").addEventListener("click", function() {
+      console.log("Button clicked: Logging to console.");
+    });
+  </script>
+
+</body>
+</html>
