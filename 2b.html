@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+function Counter() {
+  // Declare a state variable called "count"
+  const [count, setCount] = useState(0);
+
+  // Function to increment the count
+  const handleClick = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>Counter: {count}</h1>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+}
+
+// Render the Counter component
+ReactDOM.render(<Counter />, document.getElementById('root'));

@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    // Initialize state
+    this.state = {
+      count: 0
+    };
+  }
+
+  // Method to handle button click
+  incrementCount = () => {
+    this.setState(prevState => ({
+      count: prevState.count + 1
+    }));
+  };
+
+  render() {
+    return (
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <h1>Counter: {this.state.count}</h1>
+        <button onClick={this.incrementCount}>Increment</button>
+      </div>
+    );
+  }
+}
+
+// Render the Counter component
+ReactDOM.render(<Counter />, document.getElementById('root'));
