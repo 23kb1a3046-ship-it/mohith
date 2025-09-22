@@ -1,0 +1,34 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Child Component 1
+function Greeting({ name }) {
+  return <h2>Hello, {name}!</h2>;
+}
+
+// Child Component 2
+function UserInfo({ age, location }) {
+  return (
+    <p>
+      You are {age} years old and live in {location}.
+    </p>
+  );
+}
+
+// Parent Component
+function App() {
+  const user = {
+    name: 'Aarav',
+    age: 25,
+    location: 'Kota, India'
+  };
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <Greeting name={user.name} />
+      <UserInfo age={user.age} location={user.location} />
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
