@@ -1,0 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function App() {
+  const greeting = "Hello, world!";
+  const description = "This text is displayed using string literals in React.";
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>{greeting}</h1>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
