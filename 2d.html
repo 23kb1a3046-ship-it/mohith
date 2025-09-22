@@ -1,0 +1,26 @@
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+function Greeting() {
+  return <h2>Hello, welcome to the site!</h2>;
+}
+
+function App() {
+  const [showGreeting, setShowGreeting] = useState(true);
+
+  const toggleGreeting = () => {
+    setShowGreeting(prev => !prev);
+  };
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <button onClick={toggleGreeting}>
+        {showGreeting ? 'Hide Greeting' : 'Show Greeting'}
+      </button>
+      {/* Conditionally render the Greeting component */}
+      {showGreeting && <Greeting />}
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
